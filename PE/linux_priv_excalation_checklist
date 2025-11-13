@@ -1,0 +1,38 @@
+alias ls='ls -lsah'
+sudo -l
+find / -perm /6000 2>/dev/null
+ls /home
+uname -a
+file /bin/bash
+env
+getcap -r /
+find / -perm /4000 2>/dev/null
+ls /var/www/html
+cat wp-config.php
+ls /var/tmp
+ls /tmp
+ls /dev/shm
+ls /opt
+ls /var/lib
+ls /tmp
+
+ps aux | grep -i 'root'
+ps axf
+./pspy64
+dpkg -l
+
+
+netstat -tupan  # 127.0.0.1:XXX nie widac z zewnatrz
+nc -nv 127.0.0.1 XX
+searchsploit SERVICE_Z_XX
+
+ls /etc  # cos nie stworzone przez root'a
+find / iname "*secret*" 2>/dev/null
+find / iname "*pass*" 2>/dev/null
+ls -lsa | grep -i '.secret'
+ls /etc/passwd
+ls /etc/shadow
+ls /var/mail
+
+
+sudo lsof -i

