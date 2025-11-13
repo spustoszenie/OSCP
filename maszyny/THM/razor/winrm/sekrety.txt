@@ -1,0 +1,5 @@
+Impacket v0.12.0.dev1 - Copyright 2023 Fortra
+
+[*] Target system bootKey: 0xf1582a79dd00631b701d3d15e75e59f6
+[-] 
+[*] Cleaning up... 

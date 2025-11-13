@@ -1,0 +1,21 @@
+# Nmap 7.94SVN scan initiated Sun Feb 16 09:06:22 2025 as: nmap -oA enter-1 enter
+Nmap scan report for enter (10.10.136.92)
+Host is up (0.19s latency).
+Not shown: 986 closed tcp ports (reset)
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+3389/tcp open  ms-wbt-server
+5357/tcp open  wsdapi
+
+# Nmap done at Sun Feb 16 09:06:30 2025 -- 1 IP address (1 host up) scanned in 7.54 seconds

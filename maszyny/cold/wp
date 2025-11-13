@@ -1,0 +1,16 @@
+POST /wp-login.php HTTP/1.1
+Host: cold
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://cold/wp-login.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 75
+Origin: http://cold
+Connection: keep-alive
+Cookie: comment_author_=%27asdf; comment_author_email_=lol%40lol.com; comment_author_url_=http%3A%2F%2F%26%23039%3B; wordpress_test_cookie=WP+Cookie+check
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+
+log=FUZZ1&pwd=FUZZ2&wp-submit=Log+In&redirect_to=%2Fwp-admin%2F&testcookie=1

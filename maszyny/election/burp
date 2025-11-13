@@ -1,0 +1,15 @@
+POST /phpmyadmin/index.php HTTP/1.1
+Host: 192.168.241.211
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 106
+Origin: null
+Connection: keep-alive
+Cookie: pmaCookieVer=5; phpMyAdmin=nebmlgvgotlqhgdf6gevfinnhk; pma_lang=en; pma_collation_connection=utf8mb4_unicode_ci
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+
+pma_username=FUZZUSER&pma_password=FUZZPASS&server=1&target=index.php&token=f3233e9e1b354c41d1f7937307345a87

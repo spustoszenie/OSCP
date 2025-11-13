@@ -1,0 +1,29 @@
+html {
+	
+}
+
+body {
+	font-family: arial;
+	font-size: .9em;
+	background-color: #aaa;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.inner {
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	width: 800px;
+	height: auto;
+}
+
+.menu-system {
+	padding: 5px;
+	border: 1px solid #ddd;
+}

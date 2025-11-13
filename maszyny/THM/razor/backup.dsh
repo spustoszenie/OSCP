@@ -1,0 +1,5 @@
+set context persistent nowriters
+begin backup
+add volume C: alias snap
+create
+expose %snap% Z:
